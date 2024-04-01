@@ -3,13 +3,13 @@ class Plane {
     #model
     #age
     constructor(manufacturer,model,age){
-        this.#validateValue(manufacturer,model,age)
+        this.validateValue(manufacturer,model,age)
 
         this.#manufacturer = manufacturer
         this.#model = model
         this.#age = age
     }
-    #validateValue = (...values) => {
+    validateValue(...values){
         values.forEach(value => {
             if (!value || value < 0) {
                 throw new Error("Некорректное значение переменных: " + value)
